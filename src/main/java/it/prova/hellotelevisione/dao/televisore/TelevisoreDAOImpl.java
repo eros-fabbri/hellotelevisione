@@ -12,14 +12,12 @@ public class TelevisoreDAOImpl implements TelevisoreDAO {
 	@Override
 	public List<Televisore> list() throws Exception {
 
-
 		return DB_Mock.LISTA_TELEVISORI;
 	}
 
 	@Override
 	public Televisore get(Long id) throws Exception {
 
-		
 		return (Televisore) DB_Mock.LISTA_TELEVISORI.stream().filter(obj -> obj.getIdTelevisore() == id);
 //		 for (Abitante abitanteItem : DB_Mock.LISTA_ABITANTI) {
 //		        if (abitanteItem.getIdAbitante() == id) {
@@ -31,7 +29,7 @@ public class TelevisoreDAOImpl implements TelevisoreDAO {
 
 	@Override
 	public int update(Televisore input) throws Exception {
-		
+
 		for (Televisore televisoreItem : DB_Mock.LISTA_TELEVISORI) {
 			if (televisoreItem.getIdTelevisore() == input.getIdTelevisore()) {
 				televisoreItem.setMarca(input.getMarca());
@@ -47,16 +45,16 @@ public class TelevisoreDAOImpl implements TelevisoreDAO {
 
 	@Override
 	public int insert(Televisore input) throws Exception {
-		
+
 		input.setIdTelevisore(DB_Mock.getNexIdAvailable());
-		return DB_Mock.LISTA_TELEVISORI.add(input)?1:0;
-		
+		return DB_Mock.LISTA_TELEVISORI.add(input) ? 1 : 0;
+
 	}
 
 	@Override
 	public int delete(Televisore input) throws Exception {
 
-		return DB_Mock.LISTA_TELEVISORI.removeIf(tv -> tv.getIdTelevisore() == input.getIdTelevisore())?1:0;
+		return DB_Mock.LISTA_TELEVISORI.removeIf(tv -> tv.getIdTelevisore() == input.getIdTelevisore()) ? 1 : 0;
 	}
 
 	@Override
@@ -72,6 +70,7 @@ public class TelevisoreDAOImpl implements TelevisoreDAO {
 			if (abitanteItem.getMarca().startsWith(marca) && abitanteItem.getModello().startsWith(modello))
 				result.add(abitanteItem);
 		}
-		return result;	}
+		return result;
+	}
 
 }

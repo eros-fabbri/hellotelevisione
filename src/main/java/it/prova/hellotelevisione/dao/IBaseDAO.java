@@ -6,7 +6,7 @@ import java.util.List;
 import it.prova.hellotelevisione.model.Televisore;
 
 public interface IBaseDAO<T> {
-	
+
 	public List<Televisore> list() throws Exception;
 
 	public T get(Long id) throws Exception;
