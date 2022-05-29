@@ -40,7 +40,7 @@ public class ExecuteModificaTelevisoreServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("results.jsp");
 
 		try {
-			request.setAttribute("listAbitantiAttributeName",
+			request.setAttribute("listaTelevisori",
 					MyServiceFactory.getTelevisoreService().listaTelevisori());
 		} catch (Exception e) {
 			e.printStackTrace();
