@@ -48,14 +48,13 @@ th, td {
 
 		<%
 		List<Televisore> listaDaServlet = (List<Televisore>) request.getAttribute("listaTelevisori");
-		System.out.println(listaDaServlet);
 		for (Televisore televisoreItem : listaDaServlet) {
 		%>
 		<tr>
 			<td><%=televisoreItem.getMarca()%></td>
 			<td><%=televisoreItem.getModello()%></td>
 			<td><a
-				href="ExecuteShowAbitanteServlet?idDaInviareComeParametro=<%=televisoreItem.getIdTelevisore()%>">Dettaglio</a>
+				href="ExecuteShowTelevisoreServlet?idDaInviareComeParametro=<%=televisoreItem.getIdTelevisore()%>">Dettaglio</a>
 				<a
 				href="PreparaModificaServlet?idDaInviareComeParametro=<%=televisoreItem.getIdTelevisore()%>">Modifica</a>
 				<a

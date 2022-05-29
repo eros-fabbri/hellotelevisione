@@ -28,7 +28,8 @@ public class ExecuteInsertTelevisoreServlet extends HttpServlet {
 		String codiceInput = request.getParameter("codiceInput");
 		
 		
-		Televisore televisore = new Televisore(marcaIput, modelloInput, prezzoInput, polliciInput, codiceInput);
+		Televisore televisore = new Televisore(marcaIput, modelloInput, prezzoInput, polliciInput, codiceInput);		
+		
 		
 
 		try {
