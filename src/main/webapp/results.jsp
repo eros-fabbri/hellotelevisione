@@ -56,16 +56,16 @@ th, td {
 			<td><a
 				href="ExecuteShowTelevisoreServlet?idDaInviareComeParametro=<%=televisoreItem.getIdTelevisore()%>">Dettaglio</a>
 				<a
-				href="PreparaModificaServlet?idDaInviareComeParametro=<%=televisoreItem.getIdTelevisore()%>">Modifica</a>
+				href="PrepareModificaTelevisoreServlet?idDaInviareComeParametro=<%=televisoreItem.getIdTelevisore()%>">Modifica</a>
 				<a
-				href="PrepareDeleteAbitanteServlet?idDaInviareComeParametro=<%=televisoreItem.getIdTelevisore()%>">Rimuovi</a>
+				href="PrepareDeleteTelevisoreServlet?idDaInviareComeParametro=<%=televisoreItem.getIdTelevisore()%>">Rimuovi</a>
 			</td>
 		</tr>
-		<%
+		<%		
 		}
 		%>
 
-	</table>
+	</table>	
 	<br>
 	
 	<form  method="post">
