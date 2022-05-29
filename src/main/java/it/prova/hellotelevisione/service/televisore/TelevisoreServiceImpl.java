@@ -1,7 +1,9 @@
 package it.prova.hellotelevisione.service.televisore;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import it.prova.hellotelevisione.dao.DB_Mock;
 import it.prova.hellotelevisione.dao.televisore.TelevisoreDAO;
 import it.prova.hellotelevisione.model.Televisore;
 
@@ -20,7 +22,12 @@ public class TelevisoreServiceImpl implements TelevisoreService {
 	@Override
 	public List<Televisore> cercaPerMarcaEModello(String marca, String modello) {
 
-		return televisoreDAO.findByMarcaEModello(marca, modello);
+		List<Televisore> result = new ArrayList<Televisore>();
+		for (Televisore abitanteItem : DB_Mock.LISTA_TELEVISORI) {
+			if (abitanteItem.getModello().startsWith(modello) && abitanteItem.getMarca().startsWith(marca))
+				result.add(abitanteItem);
+		}
+		return result;
 	}
 
 	@Override

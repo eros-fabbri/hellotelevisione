@@ -63,14 +63,14 @@ public class TelevisoreDAOImpl implements TelevisoreDAO {
 
 	@Override
 	public List<Televisore> findByMarcaEModello(String marca, String modello) {
-
-		List<Televisore> result = new ArrayList<>();
-
+		
+	List<Televisore> result = new ArrayList<Televisore>();
 		for (Televisore abitanteItem : DB_Mock.LISTA_TELEVISORI) {
 			if (abitanteItem.getMarca().startsWith(marca) && abitanteItem.getModello().startsWith(modello))
 				result.add(abitanteItem);
 		}
 		return result;
+		//return (List<Televisore>) DB_Mock.LISTA_TELEVISORI.stream().filter(tv -> tv.getMarca().startsWith(marca) && tv.getModello().startsWith(modello));
 	}
 
 }

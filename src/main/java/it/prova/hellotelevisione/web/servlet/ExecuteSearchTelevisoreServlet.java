@@ -1,6 +1,8 @@
 package it.prova.hellotelevisione.web.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,10 +28,13 @@ public class ExecuteSearchTelevisoreServlet extends HttpServlet {
 			request.setAttribute("messaggioDiErrore", messaggioDaInviareAPagina);
 			destinazione = "searchForm.jsp";
 		} else {
+			System.out.println(marcaInput +""+modelloInput);
 			request.setAttribute("listaTelevisori",
-					MyServiceFactory.getAbitanteServiceInstance().cercaPerMarcaEModello(marcaInput, modelloInput));
+					MyServiceFactory.getTelevisoreService().cercaPerMarcaEModello(marcaInput, modelloInput));
 			destinazione = "results.jsp";
 		}
+		RequestDispatcher rd = request.getRequestDispatcher(destinazione);
+		rd.forward(request, response);
 
 	}
 

@@ -7,11 +7,11 @@ import it.prova.hellotelevisione.service.televisore.TelevisoreServiceImpl;
 public class MyServiceFactory {
 	private static TelevisoreService TELEVISORE_SERVICE_INSTANCE;
 
-	public static TelevisoreService getAbitanteServiceInstance() {
+	public static TelevisoreService getTelevisoreService() {
 		if (TELEVISORE_SERVICE_INSTANCE == null)
 			TELEVISORE_SERVICE_INSTANCE = new TelevisoreServiceImpl();
 
-		TELEVISORE_SERVICE_INSTANCE.setTelevisoreDAO(MyDaoFactory.getAbitanteDAOInstance());
+		TELEVISORE_SERVICE_INSTANCE.setTelevisoreDAO(MyDaoFactory.getTelevisoreDAOInstance());
 
 		return TELEVISORE_SERVICE_INSTANCE;
 	}
