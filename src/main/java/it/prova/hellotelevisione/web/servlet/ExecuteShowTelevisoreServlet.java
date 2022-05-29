@@ -28,7 +28,6 @@ public class ExecuteShowTelevisoreServlet extends HttpServlet {
 		try {
 			result = televisoreServiceInstance
 					.getSingoloTelevisore(Long.parseLong(idTelevisorePerDettaglio));
-			System.out.println(result);
 			request.setAttribute("televisoreDettaglio", result);
 
 			RequestDispatcher rd = request.getRequestDispatcher("dettaglio.jsp");

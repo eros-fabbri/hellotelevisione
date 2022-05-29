@@ -28,7 +28,6 @@ public class ExecuteSearchTelevisoreServlet extends HttpServlet {
 			request.setAttribute("messaggioDiErrore", messaggioDaInviareAPagina);
 			destinazione = "searchForm.jsp";
 		} else {
-			System.out.println(marcaInput +""+modelloInput);
 			request.setAttribute("listaTelevisori",
 					MyServiceFactory.getTelevisoreService().cercaPerMarcaEModello(marcaInput, modelloInput));
 			destinazione = "results.jsp";

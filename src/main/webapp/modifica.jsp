@@ -11,7 +11,7 @@
 Inserire dati da ricercare
 	<br>
 	<%Televisore televisoreDaModificare = (Televisore)request.getAttribute("televisoreDaModificare"); %>
-	<form action="ExecuteSearchTelevisoreServlet" method="post">
+	<form action="ExecuteModificaTelevisoreServlet" method="post">
 		<label for="marcaInputId">MARCA:</label>
 		<br> 
 		<input type="text"name="marcaInput" id="marcaInputId" value=<%= televisoreDaModificare.getMarca()%>> 
@@ -34,6 +34,7 @@ Inserire dati da ricercare
 		<br>
 		<br> 
 		<input type="submit" value="CONFERMA MODIFCA">
+		<input type="hidden" value=<%= televisoreDaModificare.getIdTelevisore() %> name="idTelevisoreDaModificareinput"> 
 	</form>
 
 </body>
