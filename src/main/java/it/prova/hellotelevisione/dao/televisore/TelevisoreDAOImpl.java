@@ -11,7 +11,6 @@ public class TelevisoreDAOImpl implements TelevisoreDAO {
 
 	@Override
 	public List<Televisore> list() throws Exception {
-
 		return DB_Mock.LISTA_TELEVISORI;
 	}
 
@@ -65,9 +64,9 @@ public class TelevisoreDAOImpl implements TelevisoreDAO {
 	public List<Televisore> findByMarcaEModello(String marca, String modello) {
 		
 	List<Televisore> result = new ArrayList<Televisore>();
-		for (Televisore abitanteItem : DB_Mock.LISTA_TELEVISORI) {
-			if (abitanteItem.getMarca().startsWith(marca) && abitanteItem.getModello().startsWith(modello))
-				result.add(abitanteItem);
+		for (Televisore televisoreItem : DB_Mock.LISTA_TELEVISORI) {
+			if (televisoreItem.getMarca().startsWith(marca) && televisoreItem.getModello().startsWith(modello))
+				result.add(televisoreItem);
 		}
 		return result;
 		//return (List<Televisore>) DB_Mock.LISTA_TELEVISORI.stream().filter(tv -> tv.getMarca().startsWith(marca) && tv.getModello().startsWith(modello));

@@ -10,9 +10,9 @@ public class Televisore {
 	private String codice;
 
 	public Televisore() {
-		
+
 	}
-	
+
 	public Televisore(String marca, String modello, int prezzo, int numeroPollici, String codice) {
 		this.marca = marca;
 		this.modello = modello;
@@ -73,6 +73,12 @@ public class Televisore {
 
 	public void setCodice(String codice) {
 		this.codice = codice;
+	}
+
+	@Override
+	public String toString() {
+		return "Televisore [idTelevisore=" + idTelevisore + ", marca=" + marca + ", modello=" + modello + ", prezzo="
+				+ prezzo + ", numeroPollici=" + numeroPollici + ", codice=" + codice + "]";
 	}
 
 }

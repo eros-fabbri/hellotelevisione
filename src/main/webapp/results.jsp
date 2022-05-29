@@ -48,6 +48,7 @@ th, td {
 
 		<%
 		List<Televisore> listaDaServlet = (List<Televisore>) request.getAttribute("listaTelevisori");
+		System.out.println(listaDaServlet);
 		for (Televisore televisoreItem : listaDaServlet) {
 		%>
 		<tr>
@@ -68,8 +69,8 @@ th, td {
 	</table>
 	<br>
 	
-	<form action="PrepareInsertServlet" method="post">
-		<input formaction="PrepareInsertServlet" type="submit" class="center-block" value="Aggiungi nuovo"> 
+	<form  method="post">
+		<input formaction="PrepareInsertTelevisoreServlet" type="submit" class="center-block" value="Aggiungi nuovo"> 
 	</form>
 	
 	<h3 class="center-text">
